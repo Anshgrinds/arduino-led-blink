@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "parts": [
+    {
+      "id": "bb_1",
+      "type": "breadboard-full",
+      "parentId": null,
+      "terminals": [],
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "arduino_1",
+      "type": "arduino-uno",
+      "parentId": null,
+      "terminals": [],
+      "position": {
+        "x": -0.15351881238948561,
+        "y": 0,
+        "z": -0.014469527540821106
+      }
+    },
+    {
+      "id": "led_1",
+      "type": "led-green",
+      "parentId": "bb_1",
+      "terminals": [
+        {
+          "name": "anode",
+          "connection": "10a"
+        },
+        {
+          "name": "cathode",
+          "connection": "11a"
+        }
+      ],
+      "position": {
+        "x": -0.05461,
+        "y": 0.0045000000000000005,
+        "z": -0.013970000000000002
+      }
+    },
+    {
+      "id": "r_1",
+      "type": "resistor-220",
+      "parentId": "bb_1",
+      "terminals": [
+        {
+          "name": "pin1",
+          "connection": "11e"
+        },
+        {
+          "name": "pin2",
+          "connection": "15e"
+        }
+      ],
+      "position": {
+        "x": -0.04826,
+        "y": 0.0045000000000000005,
+        "z": -0.00381
+      }
+    },
+    {
+      "id": "we_arduino_1_D2",
+      "type": "wire-end",
+      "parentId": "arduino_1",
+      "terminals": [
+        {
+          "name": "t1",
+          "connection": "D2"
+        }
+      ],
+      "position": {
+        "x": 0.02121999999999999,
+        "y": 0.0092,
+        "z": -0.024
+      }
+    },
+    {
+      "id": "we_led_1_anode",
+      "type": "wire-end",
+      "parentId": "bb_1",
+      "terminals": [
+        {
+          "name": "t1",
+          "connection": "10b"
+        }
+      ],
+      "position": {
+        "x": -0.05588,
+        "y": 0.0045000000000000005,
+        "z": -0.01143
+      }
+    },
+    {
+      "id": "we_r_1_pin2",
+      "type": "wire-end",
+      "parentId": "bb_1",
+      "terminals": [
+        {
+          "name": "t1",
+          "connection": "15a"
+        }
+      ],
+      "position": {
+        "x": -0.043179999999999996,
+        "y": 0.0045000000000000005,
+        "z": -0.013970000000000002
+      }
+    },
+    {
+      "id": "we_arduino_1_GND",
+      "type": "wire-end",
+      "parentId": "arduino_1",
+      "terminals": [
+        {
+          "name": "t1",
+          "connection": "GND"
+        }
+      ],
+      "position": {
+        "x": 0.005759999999999987,
+        "y": 0.0092,
+        "z": 0.024
+      }
+    }
+  ],
+  "wires": [
+    {
+      "id": "w_1",
+      "color": "yellow",
+      "from": "we_arduino_1_D2",
+      "to": "we_led_1_anode"
+    },
+    {
+      "id": "w_3",
+      "color": "black",
+      "from": "we_r_1_pin2",
+      "to": "we_arduino_1_GND"
+    }
+  ]
+}

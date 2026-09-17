@@ -1,0 +1,140 @@
+[
+  {
+    "order": 1,
+    "title": "Place the breadboard",
+    "description": "The breadboard provides the electrical connection points for all components. It consists of two power rails running the length of the board and a central terminal area with two separate electrical banks. This step anchors the workspace for the rest of the circuit.",
+    "instructions": "Pick up the full-size breadboard and place it on your work surface. Orient it so the red strip is at the top and the blue strip is at the bottom. Ensure there is enough space on the left side for the Arduino Uno to sit flush against the board.",
+    "components": [],
+    "holes": [],
+    "highlightComponents": [],
+    "highlightPins": [],
+    "wires": [],
+    "notes": "The breadboard has a central gap between columns 'e' and 'f' which separates the left and right electrical banks."
+  },
+  {
+    "order": 2,
+    "title": "Place the Arduino Uno",
+    "description": "The Arduino Uno is the brain of the project. It provides the processing power to run the blink code and the power supply (5V and GND) to energize the rest of the circuit. Placing it first ensures you have a stable base to build around.",
+    "instructions": "Pick up the Arduino Uno and align it so it sits flush against the left side of the breadboard. The USB connector should face away from you (to the left). The rows on the left side of the breadboard will connect directly to the Arduino's header pins.",
+    "components": [
+      "arduino_1"
+    ],
+    "holes": [],
+    "highlightComponents": [
+      "arduino_1"
+    ],
+    "highlightPins": [],
+    "wires": [],
+    "notes": "Ensure the USB port is facing away from you and the silkscreen text is readable."
+  },
+  {
+    "order": 3,
+    "title": "Wire the power rails",
+    "description": "The breadboard's power rails (red for positive 5V, blue for negative GND) are continuous electrical nets. Connecting the Arduino's 5V and GND pins to these rails creates a central power distribution hub, allowing you to power components without running wires from the Arduino every time.",
+    "instructions": "Locate the red rail at the top of the breadboard (rail_top_positive) and the blue rail at the top (rail_top_negative). Use a red jumper wire to connect the Arduino's 5V pin to the red rail, and a black jumper wire to connect the Arduino's GND pin to the blue rail.",
+    "components": [],
+    "holes": [
+      "rail_top_positive_3",
+      "rail_top_negative_3"
+    ],
+    "highlightComponents": [],
+    "highlightPins": [],
+    "wires": [
+      {
+        "from": "arduino_1",
+        "to": "rail_top_positive_3",
+        "color": "red"
+      },
+      {
+        "from": "arduino_1",
+        "to": "rail_top_negative_3",
+        "color": "black"
+      }
+    ],
+    "notes": "These rails are continuous, so any component connected to them shares the same power source."
+  },
+  {
+    "order": 4,
+    "title": "Place the LED",
+    "description": "The LED (Light Emitting Diode) is the output device that will blink. It is a polarized component with an anode (positive) leg and a cathode (negative) leg. Correct orientation is required for it to light up.",
+    "instructions": "Pick up the red LED. Identify the longer leg as the anode and the shorter leg as the cathode. Insert the anode into hole 10a on the left bank (columns a-e) and the cathode into hole 11a on the same bank. Ensure the LED sits flush with the board surface.",
+    "components": [
+      "led_1"
+    ],
+    "holes": [
+      "10a",
+      "11a"
+    ],
+    "highlightComponents": [
+      "led_1"
+    ],
+    "highlightPins": [
+      "anode",
+      "cathode"
+    ],
+    "wires": [],
+    "notes": "The anode (long leg) connects to the signal wire, and the cathode (short leg) will connect to the resistor."
+  },
+  {
+    "order": 5,
+    "title": "Wire the signal path",
+    "description": "This wire establishes the signal path from the Arduino's digital output pin D2 to the LED's anode. When the Arduino outputs a HIGH signal, current flows through this wire to the LED, triggering the blink action.",
+    "instructions": "Use a yellow jumper wire to connect the Arduino pin labeled 'D2' to the LED's anode at hole 10b on the breadboard. Route the wire carefully over the top of the board to avoid shorting against other components.",
+    "components": [],
+    "holes": [
+      "10b"
+    ],
+    "highlightComponents": [],
+    "highlightPins": [],
+    "wires": [
+      {
+        "from": "arduino_1",
+        "to": "10b",
+        "color": "yellow"
+      }
+    ],
+    "notes": "The wire connects the logic output to the LED input."
+  },
+  {
+    "order": 6,
+    "title": "Place the 220Ω resistor",
+    "description": "The 220Ω resistor is a current-limiting component placed in series with the LED. It prevents too much current from flowing, which could burn out the LED. The resistor limits the current to approximately 15 mA, which is safe for the LED.",
+    "instructions": "Pick up the 220Ω resistor. Bend the legs apart to a spacing of about 0.3 inches. Insert one leg (pin1) into hole 11e on the left bank and the other leg (pin2) into hole 15e on the same bank. The resistor should sit flat against the breadboard.",
+    "components": [
+      "r_1"
+    ],
+    "holes": [
+      "11e",
+      "15e"
+    ],
+    "highlightComponents": [
+      "r_1"
+    ],
+    "highlightPins": [
+      "pin1",
+      "pin2"
+    ],
+    "wires": [],
+    "notes": "The resistor protects the LED from excessive current."
+  },
+  {
+    "order": 7,
+    "title": "Wire the LED to ground",
+    "description": "This wire completes the circuit loop by connecting the LED's cathode (via the resistor) to the ground (GND) rail. When the Arduino drives pin D2 HIGH, current flows from 5V through the LED and resistor to GND, illuminating the LED.",
+    "instructions": "Use a black jumper wire to connect the breadboard hole 15a (connected to the resistor) to the negative power rail (rail_top_negative or rail_bottom_negative). Ensure the wire connects to the same GND rail used in Step 3.",
+    "components": [],
+    "holes": [
+      "15a"
+    ],
+    "highlightComponents": [],
+    "highlightPins": [],
+    "wires": [
+      {
+        "from": "15a",
+        "to": "rail_top_negative_3",
+        "color": "black"
+      }
+    ],
+    "notes": "This creates the return path for the current flowing through the LED."
+  }
+]

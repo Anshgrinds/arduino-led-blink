@@ -1,0 +1,13 @@
+{
+  "id": "d01fefdd-76e8-4475-89e6-af93bf1a1b98",
+  "name": "Arduino VOC Sensor Starter Kit",
+  "path": "Arduino VOC Sensor Starter Kit",
+  "board": "arduino",
+  "boardId": "arduino-uno",
+  "boardFqbn": "arduino:avr:uno",
+  "createdAt": 1789053611931,
+  "updatedAt": 1789634554155,
+  "schemaVersion": 1,
+  "exportedAt": "2026-09-17T10:18:38.276Z",
+  "exportedBy": "tinkered-app/1.0"
+}
